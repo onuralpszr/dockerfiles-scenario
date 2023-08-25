@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: carcontrol
       POSTGRES_DB: carcontrol
     volumes:
-      - pgsql:/var/lib/postgresql/data
+      - pgsqlvolume:/var/lib/postgresql/data
   pgadmin:
     image: dpage/pgadmin4
     ports:
@@ -18,8 +18,8 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin
     volumes:
-      - pgadmin:/var/lib/pgadmin
+      - pgadminvolume:/var/lib/pgadmin
 
 volumes:
-  pgsql:
-  pgadmin:
+  pgsqlvolume:
+  pgadminvolume:
